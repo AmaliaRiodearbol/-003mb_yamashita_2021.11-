@@ -1,0 +1,974 @@
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+body {
+	margin: 0;
+	padding: 0;
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+	font-size: 1rem;
+	background-image: url("../img/maximize_bg.jpg")
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Commons styles
+   ========================================================================== */
+a{text-decoration: none;color:blue;cursor:pointer;}
+a:hover{text-decoration: none;color:red;cursor:pointer;}
+a:focus, *:focus { outline:none;}
+img{border: 0px;}
+p,h1,h2,h3,h4,h5{margin: 0;padding: 0}
+ul,li,dl{margin: 0;padding: 0;list-style: none}
+.b{font-weight: bold}
+.tx_und{text-decoration: underline}
+.tx_cent{text-align: center}
+.tx_right{text-align: right}
+.disp_blk{display: block}
+.marker {background:rgba(0, 0, 0, 0) linear-gradient(transparent 55%, #adff2f 0%) repeat scroll 0 0; }
+.fc_green{color: #97cd26!important}
+.fc_brown{color: #554037!important}
+.fc_red{color: #FF0004}
+.fc_brown_l{color: #754525!important}
+.fc_blue{color: #4169e1!important}
+.ff_min_thin{ font-family: "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;}
+.ff_min_bld{  font-family: "Hiragino Mincho ProN","Hiragino Mincho Pro",HGS明朝E,メイリオ,Meiryo,serif;}
+.fs_50{font-size: 50px}
+.fs_46{font-size: 46px}
+.fs_41{font-size: 41px}
+.fs_40{font-size: 40px}
+.fs_38{font-size: 38px}
+.fs_37{font-size: 37px}
+.fs_36{font-size: 36px}
+.fs_31{font-size: 31px}
+.fs_30{font-size: 30px!important}
+.fs_28{font-size: 28px}
+.fs_26{font-size: 26px}
+.fs_24{font-size: 24px}
+.fs_20{font-size: 20px}
+.fs_22{font-size: 22px}
+.fs_18{font-size: 18px}
+.fs_15{font-size: 15px}
+.fs_16{font-size: 16px}
+.fs_14{font-size: 14px}
+.fs_13{font-size: 13px}
+.fs_12{font-size: 12px}
+.max_w{max-width: 100%; height: auto}
+.obj_cent{display: block;margin: 0 auto}
+.bx_sdw_1{box-shadow:1px 1px 3px 1px #f2f2f2;}
+.flex_wrapper{
+　　display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.flex-wrap_par{
+	flex-wrap: wrap;
+　　 display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;	
+	display: flex;		
+}
+.hover:hover{
+  opacity: 1;
+  -webkit-animation: flash 1s;
+  animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: .4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hover_0{
+	transition-property: all;
+  	transition: 0.15s linear;
+}
+.hover_0:hover{
+	opacity: 0.9;
+}
+.pc{display: block}
+.sp{display: none!important}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+         -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.max_img{
+	max-width: 100%;
+	height: auto
+}
+.cent_obj img{
+	display: block;
+	margin: 0 auto;
+}
+img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+img.alignright {
+	padding: 4px;
+	margin: 0 0 2px 10px;
+	display: inline;
+	}
+img.alignleft {
+	padding: 4px;
+	margin: 0 10px 2px 0;
+	display: inline;
+	}
+.alignright {
+	float: right;
+	}
+.alignleft {
+	float: left;
+	}
+.clear{clear: both}
+.fs_21{font-size: 21px}
+.fs_24{font-size: 24px}
+/*-------------------------------------
+ラッパー
+--------------------------------------*/
+.wrap_600{
+	width: 600px;
+	height: auto;
+	margin: 0 auto;
+}
+.wrap_700{
+	width: 800px;
+	height: auto;
+	margin: 0 auto;
+}
+.wrap_800{
+	width: 800px;
+	height: auto;
+	margin: 0 auto;
+}
+
+/*-------------------------------------
+背景色
+--------------------------------------*/
+.bg_type_1 {background-color: #f4f5f2;}
+/*-------------------------------------
+見出し
+--------------------------------------*/
+h2.type_1{
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding: 7px 15px 13px;
+    border-left: 10px solid #fe2e64;
+    border-bottom: 1px solid #b7b7b5;
+    font-size: 1.2rem;
+}
+h2.type_1::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    border-left: 5px solid #c5c3b6;
+}
+.type_2{
+    margin-bottom: 1rem;	
+	padding: 14px;
+   	font-size: 1.4rem;
+    border-top: 2px solid #006830;
+    border-bottom: 2px solid #006830;
+}
+
+
+/*-------------------------------------
+ボタン
+--------------------------------------*/
+.button {
+    position: relative;
+	width: auto;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-shadow: 0px 5px 14px 1px #858585;
+}
+.button-box {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    cursor:pointer;
+}
+.button.button-color-green {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#169676+0,0d5b40+50,169676+100 */
+background: #f5deb3; /* Old browsers */
+background: -moz-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #b4e391 0%, #61c419 50%, #b4e391 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #b4e391 0%, #61c419 50%, #b4e391 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#169676', endColorstr='#169676',GradientType=0 ); /* IE6-9 */
+cursor:pointer;
+}
+
+.button.button-style01 {
+    padding: 20px 60px;
+	text-decoration: none
+}
+.button.button-style01:before {
+    animation: arrowleft 1s;
+    animation-iteration-count: infinite;
+}
+.button.button-style01:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    margin-top: -25px;
+    width: 43px;
+    height: 49px;
+    background: transparent url(../img/arrow_right01.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.button.button-color-green span {
+    color: #fff;
+}
+.button span.copy {
+    font-size: 1.3rem;
+}
+.button span {
+    display: block;
+    font-weight: bold;
+    letter-spacing: -0.06em;
+    word-wrap: break-word;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.button span.title {
+    font-size: 2.4rem;
+}
+@keyframes arrowleft {
+  0% {
+    left: -0.7em;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes arrowright {
+  0% {
+    right: 0.7em;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    right: 0.1em;
+    opacity: 0;
+  }
+}
+
+@keyframes arrowright02 {
+  0% {
+    right: 1.2em;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    right: 0.1em;
+    opacity: 0;
+  }
+}/*-------------------------------------
+引用
+--------------------------------------*/
+blockquote {
+	margin:0;
+    position: relative;
+    padding: 45px 15px 10px 15px;
+    box-sizing: border-box;
+    /*font-style: italic;*/
+    background: #f5f5f5;
+    border-left: 4px solid #35ca7a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    vertical-align: middle;
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    color: #006830;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+blockquote p {
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
+}
+/*-------------------------------------
+余白
+--------------------------------------*/
+.sec_pad{
+	padding: 80px 0
+}
+.sec_pad_b{
+	padding-bottom: 80px
+}
+.sec_pad_t{
+	padding-top: 80px
+}
+.pl_40{padding-left: 40px}
+.ml_40{margin-left: 40px}
+.mr_40{margin-right: 40px!important}
+.mr_30{margin-right: 30px!important}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.site-header {
+  position: fixed;
+	top: 0;
+  opacity: 0.8;
+  z-index: 30;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: #edffef 2px solid;
+  background: linear-gradient(to right, #edffef 0%, #fff 25%, #fff 75%, #edffef 100%);
+  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.34);
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.site-header .logo {
+  margin-bottom: 0;
+}
+
+.site-header .logo a, .site-header .logo span {
+  display: block;
+  width: 112px;
+  height: 35px;
+  margin: 0 auto;
+  background: transparent url("../img/logo.png") 0 0 no-repeat;
+  background-size: contain;
+}
+main article.main_art{
+	margin-top: 85px;
+	padding: 26px;
+}
+main article.main_art h2.top{
+	padding: 10px 0;
+    margin-bottom: 1.6rem;
+    border-top: 2px solid #fe2e64;
+    border-bottom: 2px solid #fe2e64;
+    font-size: 1.4rem;
+}
+main article.main_art img.piv{
+	width: 80%;
+	height: auto;
+	display: block;
+	margin: 1.8rem auto;	
+}
+main article.main_art p,
+main article.main_art ul.list,
+main article.main_art blockquote {
+	font-size: 16px;
+	line-height: 33px;
+	margin-bottom: 1.8rem;
+}
+main article.main_art blockquote h3{
+	font-size: 22px;
+}
+main article.main_art blockquote p{
+	margin-bottom: 0
+}
+footer {
+	margin-top: 40px;
+    background: #edffef;
+    padding: 1.4rem 0;
+    text-align: center;
+    font-size: 1rem;
+    color: #000;
+}
+footer .admin {
+	margin-bottom: 14px
+}
+footer .admin a{
+	color: inherit;
+	padding: 0 14px;
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;	
+}
+.ma_t_1{margin-top: 1.8rem}
+.ma_t_2{margin-top: 2.8rem}
+.list{
+	margin-left: 1.0em;
+}
+.list li{
+	color: #4169e1;
+	font-weight: bold;
+	position: relative
+	margin-left: 1.0em;
+	text-indent: -1.0em;
+    margin-bottom:20px;
+    line-height:24px;
+}
+.list li::before{
+	content: "・";
+	color: #222222
+}
+.marker a{color: inherit;transition-property: all;transition: 0.1s linear;	color:blue;cursor:pointer;	
+}
+.marker a:hover{color: red}
+#content{
+    padding: 0;
+    margin-top: 20px;
+}
+#content {
+    padding: 40px 0;
+}
+.wrap {
+    width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    *zoom: 1;
+}
+#content .wrap {
+    width: 1000px;
+}
+#content .wrap {
+    overflow: visible;
+}
+
+#content .wrap #main {
+    width: 100%;
+    float: none;
+}
+#content .wrap #main .main-inner {
+    width: 100%;
+	margin: 0;}
+#post-2 .post-header {
+    margin-bottom: 0;
+    padding: 40px 0 20px;
+}
+#post-2 .post-header h1 {
+    margin-bottom: 10px;
+}
+#post-2 .post-content div{
+    padding: 20px 15px;
+	margin-bottom: 1px;
+	color: #222;
+}
+#post-2 .post-content div.th{
+	width: 165px;
+    background: #dfdfdd;
+	display: flex;
+	align-items: center;
+	color: #000;
+}
+#post-2 .post-content div.td{
+	width: calc(100% - 165px);
+}
+.cap{
+    font-size:13px;
+    margin-top:-20px;
+}
+.right{
+    text-align:left;
+    font-size:16px;
+    line-height:24px;
+	margin-left: 1.0em;
+}
+.red li{
+    color:red;
+}
+.red li::before{
+	content: "・";
+    color:red;
+}
+.red_a{
+    color:red;
+}
+.b_a{
+    color:#000;
+}
+
+.youtube iframe{
+  width: 80%;
+  height:415px;
+}
+.br-sp{
+    display:none;
+}
+.pch{
+    text-align:center;
+}
+.clock-solid.icon {
+  color: #000;
+  position: absolute;
+  margin-left: 2px;
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+  background-color: currentColor;
+  border: solid 1px currentColor;
+  border-radius: 8px;
+}
+
+.clock-solid.icon:before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 5px;
+  height: 1px;
+  color: white;
+  background-color: currentColor;
+  -webkit-transform-origin: 0% 0%;
+ transform-origin: 0% 0%;
+}
+
+.clock-solid.icon:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 1px;
+  height: 6px;
+  color: white;
+  background-color: currentColor;
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+
+.clock-solid.icon .time{
+    margin-left:20px;
+    margin-top:-5px;
+    width:200px;
+}
+
+
+
+
+@media screen and (max-width:767px){
+/* ==========================================================================
+   Commons styles
+   ========================================================================== */
+.flex_wrapper, .flex-wrap_par{
+    display: block;
+}
+.youtube iframe{
+  width: 100%;
+  height:220px;
+}
+.br-sp{
+    display:block;
+}
+.pch{
+    text-align:left;
+}
+main article.main_art img.piv{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 1.8rem auto;	
+}
+
+.pc{display: none!important}
+.sp{display: block!important}	
+.wrap_600,.wrap_700,.wrap_800 {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+	padding: 0 0.8rem
+}
+.fs_37 {
+    font-size: 27px;
+}	
+.sec_pad {
+    padding: 2.6rem 0;
+}
+.sec_pad_b {
+    padding-bottom: 2.6rem
+}
+.sec_pad_t {
+    padding-top: 2.6rem
+}
+.button-box {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}	
+.button.button-style01 {
+    padding: 20px 10%;
+    text-decoration: none;
+}
+.wrap, #content .wrap {
+    width: 94%;
+	margin: 0 auto
+}
+.post-content h3 {
+    font-size: 1.2rem;
+}
+#post-2 .post-header {
+    margin-bottom: 0;
+    padding:  10px 20px;
+}	
+#post-2 .post-header h1 {
+    margin-bottom: 0;
+}	
+#post-2 .post-content {
+	width: 90%;
+	margin: 0 auto 2rem;
+	border: 1px #ddd solid;
+	padding: 1px	
+}	
+#post-2 .post-content div {
+    padding: 6px 8px;
+    margin-bottom: 1px;
+    color: #666;
+}	
+#post-2 .post-content div.th {
+    width: 100%;
+    display: block;
+    align-items: center;
+}	
+#post-2 .post-content div.td {
+    width: 100%;
+}	
+	
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+
+}
+.blue_a{
+    color:blue;
+}
+.mb-style3 {
+    background: linear-gradient(rgba(254,254,152,0) 60%, #ffff00 60%);
+    font-weight: bold;
+}
+.mbr_dashed_line {
+    border: dashed 2px #ff0004;
+    padding: 10px;
+}
+.mbb_dashed_line {
+    border: dashed 2px #01c9f4;
+    padding: 10px;
+}
+.mb-style4 {
+    background: linear-gradient(rgba(246,206,245,0) 50%, #0fcaf4 70%);
+    font-weight: bold;
+}
+.mb-style5 {
+    background: linear-gradient(rgba(245, 218, 129, 0) 50%, #faa2a3 70%);
+    font-weight: bold;
+}
+.mb-style6 {
+    border: solid 3px #FE2E64;
+    padding: 0.6em;
+    border-radius: 0.5em;
+    font-size: 1.0rem;
+	line-height: 1.7em;
+}
+.txt06_3 {
+    height: auto;
+    padding: 1% 2% 1% 5%;
+    font-size: 12px;
+    line-height: 170%;
+    text-align: right;
+    color: #8f8f8f;
+}
+.tmt {
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+  position: relative;
+}
+.tmt::after {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+iframe {
+  width: 100%;
+  position: absolute;
+  display: block;
+}
